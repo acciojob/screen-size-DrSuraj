@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html>
 
@@ -13,4 +13,41 @@
 
 </body>
 
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Size</title>
+</head>
+<body>
+
+<div id="sizeInfo">
+    <h1 id="sizeText"></h1>
+</div>
+
+<script>
+    // Function to update the screen size in the h1 tag
+    function updateScreenSize() {
+        const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        // Get the h1 element
+        const sizeTextElement = document.getElementById('sizeText');
+
+        // Update the content of the h1 tag
+        sizeTextElement.textContent = `Width: ${width} and Height: ${height}`;
+    }
+
+    // Initial call to set the initial screen size
+    updateScreenSize();
+
+    // Event listener for window resize
+    window.addEventListener('resize', updateScreenSize);
+</script>
+
+</body>
 </html>
