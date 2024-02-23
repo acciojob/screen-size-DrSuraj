@@ -1,53 +1,34 @@
-<!-- <!DOCTYPE html>
-
-<html>
-
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
-</html>
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screen Size</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Size</title>
+  <style>
+    #sizeInfo {
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
+  <div id="sizeInfo">
+    <h1 id="screenSize"></h1>
+  </div>
 
-<div id="sizeInfo">
-    <h1 id="sizeText"></h1>
-</div>
-
-<script>
-    // Function to update the screen size in the h1 tag
+  <script>
+    // Function to update screen size information
     function updateScreenSize() {
-        const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-        // Get the h1 element
-        const sizeTextElement = document.getElementById('sizeText');
-
-        // Update the content of the h1 tag
-        sizeTextElement.textContent = `Width: ${width} and Height: ${height}`;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const screenSizeElement = document.getElementById('screenSize');
+      screenSizeElement.textContent = `Width: ${width} Height: ${height}`;
     }
 
-    // Initial call to set the initial screen size
+    // Initial call to update screen size on page load
     updateScreenSize();
 
-    // Event listener for window resize
+    // Add event listener for window resize event
     window.addEventListener('resize', updateScreenSize);
-</script>
-
+  </script>
 </body>
 </html>
